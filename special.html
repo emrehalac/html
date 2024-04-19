@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Popup Login Form Design | CodingNepal</title>
+      <link rel="stylesheet" href="special.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="center">
+         <input type="checkbox" id="show">
+         <label for="show" class="show-btn"> Dikkat: Sadece Savcılar Girebilir!
+         </label>
+         <div class="container">
+            <label for="show" class="close-btn fas fa-times" title="close"></label>
+            <div class="text">
+               Giriş Formu
+            </div>
+            <form id="loginForm">
+               <div class="data">
+                  <label>Şifre:</label>
+                  <input type="password" id="password" required>
+               </div>
+               <div class="forgot-pass">
+                  <a href="#">Şifreni unuttuysan 39 euro boşa gitti...</a>
+               </div>
+               <div class="btn">
+                  <div class="inner"></div>
+                  <button type="submit">Hadi Girelim.</button>
+               </div>
+            </form>
+         </div>
+      </div>
+      
+      <script>
+         document.getElementById("loginForm").addEventListener("submit", function(event){
+            event.preventDefault(); // Sayfanın yenilenmesini engellemek için form gönderme işlemini durduruyoruz.
+            var password = document.getElementById("password").value;
+            if(password === "Emrem2802"){
+               window.location.href = "./mektup.html"; // Doğru şifre ise mektup.html sayfasına yönlendirme yapılıyor.
+            } else {
+               alert("Maalesef yanlış oldu sayın savcım. İyi düşün!"); // Yanlış şifre girildiğinde uyarı veriliyor.
+            }
+         });
+      </script>
+   </body>
+</html>
